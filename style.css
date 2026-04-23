@@ -1005,6 +1005,29 @@ img {
   .edu-card {
     padding: 24px;
   }
+
+  /* Scroll indicator: sale del posicionamiento absoluto y fluye debajo del contenido */
+  .scroll-indicator {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 40px;
+    align-self: center;
+    animation: bob-mobile 2s ease-in-out infinite;
+  }
+}
+
+@keyframes bob-mobile {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 @media (max-width: 600px) {
