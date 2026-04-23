@@ -899,6 +899,121 @@ img {
   background: var(--accent);
 }
 
+/* ─── CONTACTO ─────────────────────────────────── */
+.contact-intro {
+  font-size: 1rem;
+  color: var(--text-mute);
+  margin-bottom: 48px;
+  max-width: 520px;
+  line-height: 1.8;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s, border-color .3s, box-shadow .3s, background .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 195, 74, .35);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, .4), var(--glow);
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-card-location {
+  cursor: default;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(139, 195, 74, .12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: background .3s, transform .3s;
+}
+
+.contact-card:hover .contact-icon {
+  background: rgba(139, 195, 74, .22);
+  transform: scale(1.08);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.contact-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.contact-value {
+  font-family: var(--font2);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.contact-sub {
+  font-size: .8rem;
+  color: var(--text-mute);
+}
+
+.contact-arrow {
+  font-size: 1.2rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity .25s, transform .25s;
+  flex-shrink: 0;
+}
+
+.contact-card:hover .contact-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* ─── FOOTER ───────────────────────────────────── */
 .footer {
   background: var(--bg);
